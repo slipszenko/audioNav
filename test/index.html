@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JSaudioCapture - Example 3</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../src/audioNav.js"></script>
+    <style type="text/css">
+        #final_span {
+            color: blue;
+        }
+
+        #interim_span {
+            color: green;
+        }
+    </style>
+</head>
+<body id="top">
+    <h1>JSaudioCapture - Example 3</h1>
+    <strong>Audio Command:</strong>
+    <div id="command">
+        <span id="final_span"></span><br />
+        <span id="interim_span"></span>
+    </div>
+    <h2>Try these commands.</h2>
+    <ul>
+        <li>navigate top</li>
+        <li>navigate bottom</li>
+        <li>navigate (to) experiment 1</li>
+        <li>navigate (to) experiment 2</li>
+        <li>scroll up</li>
+        <li>scroll down</li>
+    </ul>
+    <h2>Needed page filler and links</h2>
+    <p><a href="#top">Top</a></p>
+    <p><a href="#bottom">Bottom</a></p>
+    <p><a href="/experiments/ex1/">Experiment 1</a></p>
+    <p><a href="/experiments/ex2/">Experiment 2</a></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel faucibus nisi, id sollicitudin tellus. Curabitur id massa id sapien blandit auctor id in nunc. Integer ultricies consequat quam at rutrum. Duis aliquam massa in velit tincidunt vulputate. Suspendisse ut ullamcorper orci, vel blandit magna. Etiam ut pharetra dui. Fusce mollis ultricies lacus, et fringilla velit tincidunt eget. Nam accumsan eleifend massa ac consectetur. Integer dapibus et libero quis tristique. Duis sollicitudin lorem quis porta mollis. Vivamus faucibus ipsum ipsum, a commodo elit malesuada quis. Phasellus accumsan nibh non enim vehicula, non iaculis orci hendrerit. Maecenas commodo urna ullamcorper massa accumsan, sed dignissim ipsum viverra. Fusce nec orci ac neque faucibus facilisis et vel risus. Phasellus cursus arcu eget tortor varius mollis.</p>
+    <p>Sed in aliquet purus. Vestibulum dignissim neque est, nec cursus ipsum dignissim eget. Quisque ut sagittis quam. Etiam tempus tellus cursus leo tempor venenatis. Suspendisse vel ullamcorper eros, sed iaculis nibh. Fusce nec posuere enim, ut pretium diam. Nunc elit enim, venenatis nec elementum ut, faucibus at dui.</p>
+    <p>Sed sit amet semper massa, at dictum lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla volutpat sem nibh, sit amet placerat sapien placerat sed. Aliquam commodo lorem nunc, a pulvinar urna blandit eget. Integer sit amet eleifend neque. Duis euismod ligula ac enim lobortis consequat. Duis facilisis odio nec rhoncus mollis. Cras eros arcu, dictum id congue eget, placerat ac tellus. Nullam ut libero eu enim tincidunt mollis id laoreet tortor. Curabitur aliquam urna et ultricies ultricies.</p>
+    <p>Cras rhoncus auctor sapien nec varius. Phasellus tempor arcu quam, ut dignissim risus blandit at. Ut varius tellus iaculis arcu malesuada, sit amet commodo risus pellentesque. Vivamus varius at nulla eget aliquam. Etiam cursus faucibus erat, sit amet facilisis enim rutrum vel. Duis pulvinar risus eu erat porta, ac pellentesque risus sagittis. Curabitur viverra massa sit amet erat consequat laoreet. Etiam pulvinar dui vitae dui viverra, ut feugiat eros volutpat.</p>
+    <p>Fusce lacinia lacus eu risus pellentesque, quis luctus nibh placerat. Maecenas ullamcorper neque in erat laoreet imperdiet. Aliquam aliquam ipsum sed posuere mollis. Ut viverra augue nec tortor scelerisque laoreet. Proin congue scelerisque orci vitae pretium. Etiam porta nibh ante. Mauris luctus eleifend ipsum, quis tempus mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis imperdiet magna at ipsum volutpat dictum nec nec nibh. Duis vel eros euismod, molestie elit eu, facilisis purus. Proin augue tellus, molestie at metus quis, accumsan congue erat.</p>
+    <p>Nullam id interdum turpis. Pellentesque sit amet dapibus eros. Sed sodales, eros quis vestibulum blandit, sem nisl malesuada sapien, ut adipiscing diam nibh eu tellus. Aliquam in nisi fermentum, posuere nibh in, dapibus lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum scelerisque justo et nulla commodo sagittis. Pellentesque dignissim sed sapien sed dictum.</p>
+    <p>Nulla consectetur quam nisi, eget vulputate ante commodo a. Nunc eleifend enim lorem. Donec mauris erat, interdum et iaculis eu, sagittis in mauris. Sed quis convallis libero. Maecenas pretium tincidunt adipiscing. Praesent non vehicula ipsum, in feugiat neque. Ut vulputate eleifend dui in laoreet. Sed quis sollicitudin turpis. Vestibulum nec pulvinar massa. Vestibulum quis nisi magna. Donec eget ultricies libero. Curabitur in augue odio. Phasellus porttitor nisl id augue eleifend, non auctor diam accumsan.</p>
+    <p>Quisque ac bibendum urna. Donec hendrerit sem non odio tincidunt, dictum aliquam dui pellentesque. Donec sed dolor vehicula turpis tincidunt tincidunt. Nullam ante dui, sagittis vitae neque in, dapibus fringilla tellus. Pellentesque imperdiet nunc non pretium dapibus. Suspendisse vitae diam eget diam malesuada aliquet. Sed congue dui a magna convallis tempus. Sed porta leo non mattis rhoncus. Mauris eu tincidunt ante, vitae mollis eros. Maecenas euismod viverra dictum. Quisque sit amet augue pretium, pulvinar tortor a, sollicitudin erat. Maecenas ipsum ante, sollicitudin eu nulla sit amet, laoreet mattis purus. Aliquam vestibulum aliquet ligula, cursus dictum purus fermentum nec. Fusce et suscipit purus, vel adipiscing magna. Proin pulvinar mauris mauris, id fringilla arcu viverra eget.</p>
+    <p>Nunc at velit rhoncus, scelerisque leo sit amet, fringilla neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent ultrices purus vel diam volutpat, eu pulvinar dolor dictum. Integer vel est ullamcorper, sagittis quam sit amet, eleifend mi. Nullam sit amet neque vel sem fermentum pharetra. Sed pharetra justo sit amet tortor consectetur, eu placerat metus lacinia. Nunc tortor quam, rutrum eget cursus at, condimentum sed erat.</p>
+    <p id="bottom">This one has the #bottom anchor. Aliquam eget lacinia nisi. Maecenas euismod vitae nisi eget sodales. Proin volutpat dolor posuere risus tincidunt semper. Nunc venenatis placerat condimentum. Fusce tincidunt eget leo eu commodo. Pellentesque pulvinar placerat ante quis tincidunt. Pellentesque euismod, nibh imperdiet aliquet molestie, ante dui fringilla diam, sed congue metus nunc id dolor. Phasellus ac velit eu nulla iaculis consequat et vitae ante. Nam neque massa, vehicula nec euismod eget, euismod at sem. Duis sodales enim vitae mollis tincidunt. Sed viverra commodo dui consequat malesuada. Ut leo dui, viverra nec eros et, tristique vestibulum nulla. Aenean at vehicula tortor, nec blandit est. Nunc imperdiet diam id feugiat posuere. Curabitur eu metus pretium tellus consectetur consectetur sed id turpis. Praesent sagittis nulla ac nibh gravida adipiscing accumsan non purus. </p>
+</body>
+</html>
