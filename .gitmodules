@@ -1,0 +1,3 @@
+[submodule "lib/h5pres"]
+	path = lib/h5pres
+	url = git@github.com:slipszenko/h5pres.git
