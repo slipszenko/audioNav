@@ -30,9 +30,21 @@ szko.audioNav = (function (external) {
                 break;
 
             case 'next':
-            case 'prev':
+            case 'previous':
                 if(commandParameters == "slide") {
-
+                    if(commandWord == "next") {
+                        external.szko.h5pres.nextSlide();
+                    } else {
+                        external.szko.h5pres.prevSlide();
+                    }
+                }
+                break;
+            
+            case 'presentation':
+                if(commandParameters == "start") {
+                    external.szko.h5pres.startPresenting();
+                } else if(commandParameters == "stop") {
+                    external.szko.h5pres.stopPresenting();
                 }
                 break;
 
