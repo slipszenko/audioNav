@@ -66,6 +66,11 @@ szko.audioNav = (function (external) {
     },
 
 
+    lastWord = function(o) {
+        return (""+o).replace(/[\s-]+$/,'').split(/[\s-]/).pop();
+    },
+
+
     init = function () {
         // Build up the collection of links
         var linkElems = document.querySelectorAll("a");
@@ -91,25 +96,21 @@ szko.audioNav = (function (external) {
                 var interim_transcript = '';
 
                 for (var i = event.resultIndex; i < event.results.length; ++i) {
-                    if (event.results[i].isFinal) {
-                        final_transcript = event.results[i][0].transcript;
-                        processCommand(event.results[i][0].transcript);
-                    } else {
-                        // TODO: Check for a cancel
-                        interim_transcript += event.results[i][0].transcript;
-                        /*
-                        switch(lastWord(event.results[i][0].transcript)) {
-                            case "go":
-                                processCommand(interim_transcript);
-                                break;
-                            case "cancel":
-                                interim_transcript = "";
-                                break;
-                            default:
+                    switch(lastWord(event.results[i][0].transcript)) {
+                        case "go":
+                            processCommand(interim_transcript);
+                        break;
+                        case "cancel":
+                            interim_transcript = "";
+                        break;
+                        default:
+                            if(event.results[i].isFinal) {
+                                final_transcript = event.results[i][0].transcript;
+                                processCommand(event.results[i][0].transcript);
+                            } else {
                                 interim_transcript += event.results[i][0].transcript;
-                                break;
-                        }
-                        */
+                            }
+                        break;
                     }
                 }
 
