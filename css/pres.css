@@ -1,21 +1,32 @@
 h1{
-	text-align: center;
+    text-align: center;
     color: #305090;
     font-family: Arial;
     font-size: 5em;
 }
 
 h2{
-	text-align: center;
+    text-align: center;
     color: #305090;
     font-family: Arial;
     font-size: 3em;
 }
 
 p{
-	font-family: Arial;
-	font-size: 1.5em;
+    font-family: Arial;
+    font-size: 1.5em;
+}
 
+ul {
+    font-size: 1.5em;
+}
+
+h2:fullscreen {
+    font-size: 4em;
+}
+
+p:fullscreen {
+    font-size: 2em;
 }
 
 #final_span {

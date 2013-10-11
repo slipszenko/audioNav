@@ -14,11 +14,10 @@
 
     <!-- Presentation css file -->
     <link rel="stylesheet" type="text/css" href="../css/pres.css">
-
 </head>
 <body>
     <header id="javascriptlectureswo">
-        <h1>HTML5 Audio Navigation</h1>
+        <h1>WEBRES Presentation</h1>
     </header>
 
     <div id="command">
@@ -27,15 +26,47 @@
     </div>
 
     <article>
-        <section id="introduction">
-            <h2 id="introduction_">Introduction</h2>
-            <p>Blah blah blah</p>
-            <p>More stuff.</p>
+        <section id="introduction" class="fullscreenMarginLots">
+            <h2 id="introduction_">HTML5 Speech Recognition API</h2>
+            <p>David Bryson<br />
+                Edward Slipszenko - <a href="http://twitter.com/slipszenko">@slipszenko</a></p>
+            <p><em>webkitSpeechRecognition</em></p>
         </section>
 
-        <section id="somethingelse">
-            <h2 id="somethingelse_">Source Code</h2>
-            <p>Blah blah blah</p>
+        <section id="possibleUses" class="fullscreenMarginLittle">
+            <h2 id="possibleUses_">What it is</h2>
+            <p>The HTML5 <em>webkitSpeechRecognition</em> API, allows you to build entirely voice driven web applications. This opens up and entirely new set of possibilities within the browser, such as:</p>
+            <ul>
+                <li>Voice driven games</li>
+                <li>New means of accessibility</li>
+                <li>Siri-like web application</li>
+                <li>Hands free mobile sites</li>
+                <li>Potentially faster navigation</li>
+                <li>...and what we're going to build: voice navigation</li>
+            </ul>
+        </section>
+
+        <section id="possibleUses" class="fullscreenMarginLittle">
+            <h2 id="possibleUses_">Possible Users</h2>
+            <p>Possible users for voice navigation:</p>
+            <ul>
+                <li>The disabled</li>
+                <li>Tech illiterate users, such as the elderly or very young children</li>
+                <li>Someone who is multitasking, e.g. a researcher performing an experiment, or just someone doing the dishes who wants to read at the same time.</li>
+                <li>... or just someone too lazy to move the mouse.</li>
+            </ul>
+        </section>
+
+        <section id="possibleUses">
+            <h2 id="possibleUses_">The API</h2>
+            <script src="https://gist.github.com/slipszenko/b445f845c21664aebb03.js"></script>
+        </section>
+
+        <section id="" class="fullscreenMarginLittle">
+            <h2 id="somethingelse_">Example</h2>
+            <p><a href="http://projecttests1.slipszenko.net/experiments/ex3/index.html">Here's</a> another example of this in action.</p>
+            <p>For more info, check this out:<br />
+                <a href="http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API">http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API</a>
         </section>
     </article>
 </body>
