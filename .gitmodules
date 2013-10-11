@@ -1,3 +1,6 @@
 [submodule "lib/h5pres"]
 	path = lib/h5pres
 	url = git@github.com:slipszenko/h5pres.git
+[submodule "lib/css3-print"]
+	path = lib/css3-print
+	url = git@github.com:slipszenko/css3-print.git
