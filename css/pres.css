@@ -21,12 +21,13 @@ ul {
     font-size: 1.5em;
 }
 
-h2:fullscreen {
+:-webkit-full-screen h2 {
     font-size: 4em;
 }
 
-p:fullscreen {
+:-webkit-full-screen p, :-webkit-full-screen ul {
     font-size: 2em;
+    margin: 20px 60px;
 }
 
 #final_span {
