@@ -97,6 +97,19 @@ szko.audioNav = (function (external) {
                     } else {
                         // TODO: Check for a cancel
                         interim_transcript += event.results[i][0].transcript;
+                        /*
+                        switch(lastWord(event.results[i][0].transcript)) {
+                            case "go":
+                                processCommand(interim_transcript);
+                                break;
+                            case "cancel":
+                                interim_transcript = "";
+                                break;
+                            default:
+                                interim_transcript += event.results[i][0].transcript;
+                                break;
+                        }
+                        */
                     }
                 }
 
