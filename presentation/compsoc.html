@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>How to wreck a nice beach</title>
+
+    <!-- Files for h5pres -->
+    <script src="../lib/h5pres/src/h5pres.js"></script>
+    <link rel="stylesheet" href="../lib/h5pres/src/h5pres.css" />
+
+    <!-- Files for audioNav, inc jQuery requirement -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../src/audioNav.js"></script>
+
+    <!-- Presentation css file -->
+    <link rel="stylesheet" type="text/css" href="../css/pres.css">
+</head>
+<body>
+    <header>
+        <h1>HTML5 Audio Presentation</h1>
+    </header>
+
+    <div id="command">
+        <span id="final_span"></span><br />
+        <span id="interim_span"></span>
+    </div>
+
+    <article>
+        <section>
+            <h2>HTML5 Speech Recognition</h2>
+            <h2>/HTML5's Beach Wreck Ignition</h2>
+            <p>Edward Slipszenko<br />
+                <a href="http://twitter.com/slipszenko">@slipszenko</a></p>
+            <p><em>webkitSpeechRecognition</em></p>
+        </section>
+
+        <section>
+            <h2>What it is</h2>
+            <p>The HTML5 <em>webkitSpeechRecognition</em> API, allows you to build entirely voice driven web applications. This opens up and entirely new set of possibilities within the browser, such as:</p>
+            <ul>
+                <li>Voice driven games</li>
+                <li>New means of accessibility</li>
+                <li>Siri-like web application</li>
+                <li>Hands free mobile sites</li>
+                <li>Potentially faster navigation</li>
+                <li>Voice navigation</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Possible Users</h2>
+            <p>Possible users for voice navigation:</p>
+            <ul>
+                <li>The disabled</li>
+                <li>Tech illiterate users, such as the elderly or very young children</li>
+                <li>Someone who is multitasking, e.g. a researcher performing an experiment, or just someone doing the dishes who wants to read at the same time.</li>
+                <li>... or just someone too lazy to move the mouse.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The API v1</h2>
+            <script src="https://gist.github.com/slipszenko/a885383ce306e8ccf30d.js"></script>
+        </section>
+
+        <section>
+            <h2>The API v2</h2>
+            <script src="https://gist.github.com/slipszenko/b445f845c21664aebb03.js"></script>
+        </section>
+
+        <section>
+            <h2>Example</h2>
+            <p><a href="http://projecttests1.slipszenko.net/experiments/ex3/index.html">Here's</a> another example of this in action.</p>
+            <p>References:</p>
+            <ul>
+                <li><a href="http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API">http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API</a></li>
+                <li><a href="http://stiltsoft.com/blog/2013/05/google-chrome-how-to-use-the-web-speech-api/">http://stiltsoft.com/blog/2013/05/google-chrome-how-to-use-the-web-speech-api/</a></li>
+            </ul>
+            <p>See the code for this presentation:<br />
+                <a href="https://github.com/slipszenko/audioNav">https://github.com/slipszenko/audioNav</a><br />
+                Or see the slides here:
+                <a href="http://audionav.slipszenko.net/presentation/compsoc.html">http://audionav.slipszenko.net/presentation/compsoc.html</a></p>
+        </section>
+    </article>
+    <!--
+    - Add in history of API
+    - Separate mic for commands
+    - Cons / Pros
+    - Mention and use grxml
+    - Talk about other input methods (input tag)
+    - Prepare talking better
+    - Expand onresult callback function and the objects available to it
+    - Add in and mention go and cancel commands
+    - Have it in some already existing websites ready to show in other tabs
+    -->
+</body>
+</html>

@@ -8,6 +8,7 @@ szko.audioNav = (function (external) {
     var recognition,
         final_transcript,
         links = {},
+        success_sound,
 
 
     processCommand = function (command) {
@@ -20,11 +21,13 @@ szko.audioNav = (function (external) {
                 if(commandParameters.split(" ", 1)[0] != "to") {
                     if(!!links[commandParameters]) {
                         window.location = links[commandParameters];
+                        success_sound.play();
                     }
                 } else {
                     commandParameters = commandParameters.substr(3);
                     if(!!links[commandParameters]) {
                         window.location = links[commandParameters];
+                        success_sound.play();
                     }
                 }
                 break;
@@ -34,17 +37,21 @@ szko.audioNav = (function (external) {
                 if(commandParameters == "slide") {
                     if(commandWord == "next") {
                         external.h5pres.nextSlide();
+                        success_sound.play();
                     } else {
                         external.h5pres.prevSlide();
+                        success_sound.play();
                     }
                 }
                 break;
             
             case 'presentation':
-                if(commandParameters == "start") {
+                if(commandParameters == "start" || commandParameters == "starts") {
                     external.h5pres.startPresenting();
+                    success_sound.play();
                 } else if(commandParameters == "stop") {
                     external.h5pres.stopPresenting();
+                    success_sound.play();
                 }
                 break;
 
@@ -54,8 +61,10 @@ szko.audioNav = (function (external) {
                 commandParameters = trim(commandParameters);
                 if(commandParameters == "up") {
                     console.log("Go up");
+                    success_sound.play();
                 } else {
                     console.log("Go down");
+                    success_sound.play();
                 }
                 break;
 
@@ -78,6 +87,18 @@ szko.audioNav = (function (external) {
             links[linkElems[i].innerHTML.toLowerCase()] = linkElems[i].href;
         }
 
+        // Create the success sound element
+        success_sound = document.createElement("audio");
+        var source= document.createElement("source");
+        if(success_sound.canPlayType("audio/mpeg;")) {
+            source.type = "audio/mpeg";
+            source.src = "/src/resources/beep.mp3";
+        } else {
+            source.type = "audio/ogg";
+            source.src = "/src/resources/beep.ogg";
+        }
+        success_sound.appendChild(source);
+
         // Make speechRecognition and URL available crossbrowser without prefixes
         window.speechRecognition = ( window.speechRecognition || window.webkitSpeechRecognition);
 
@@ -98,10 +119,15 @@ szko.audioNav = (function (external) {
                 for (var i = event.resultIndex; i < event.results.length; ++i) {
                     switch(lastWord(event.results[i][0].transcript)) {
                         case "go":
+                            console.log(interim_transcript);
                             processCommand(interim_transcript);
+                            final_transcript = "";
+                            interim_transcript = "";
                         break;
                         case "cancel":
                             interim_transcript = "";
+                            final_transcript = "";
+                            success_sound.play();
                         break;
                         default:
                             if(event.results[i].isFinal) {
