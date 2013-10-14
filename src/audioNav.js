@@ -115,7 +115,7 @@ szko.audioNav = (function (external) {
             recognition.onstart = function() { console.log("Speech recognition started."); }
             recognition.onresult = function(event) {
                 var interim_transcript = '';
-
+                console.log(event);
                 for (var i = event.resultIndex; i < event.results.length; ++i) {
                     switch(lastWord(event.results[i][0].transcript)) {
                         case "go":
@@ -125,9 +125,12 @@ szko.audioNav = (function (external) {
                             interim_transcript = "";
                         break;
                         case "cancel":
-                            interim_transcript = "";
-                            final_transcript = "";
-                            success_sound.play();
+                            if(!event.results[i].isFinal) {
+                                interim_transcript = "";
+                                final_transcript = "";
+                                success_sound.play();
+                            }
+                            i = event.results.length + 1; // Break out of the outer loop
                         break;
                         default:
                             if(event.results[i].isFinal) {
