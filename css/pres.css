@@ -30,6 +30,13 @@ ul {
     margin: 20px 60px;
 }
 
+:-webkit-full-screen form.textInput input {
+    margin: 20px 60px;
+    font-size: 32px;
+    padding: 5px;
+    width: 900px;
+}
+
 #final_span {
     color: blue;
 }

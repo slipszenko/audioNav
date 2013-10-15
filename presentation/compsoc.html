@@ -58,8 +58,47 @@
         </section>
 
         <section>
+            <h2>Pros</h2>
+            <ul>
+                <li>Improved accessibility</li>
+                <li>More interactivity</li>
+                <li>New possibilities for websites</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Cons</h2>
+            <p>All data goes through Google's servers, so:</p>
+            <ul>
+                <li>Privacy concerns - Google <em>could</em> hear everything your users are saying</li>
+                <li>Requires an internet connection</li>
+                <li>If this connection is slow, speech recognition lags a lot due to the request time between browser and Google's servers.</li>
+                <li>Currently only works in Chrome, and it's not clear how other browsers will implement it (as it is doubtful they'll be using Google's servers).</li>
+            </ul>
+            <p>Mozilla have said they will implement it, but it is not currently clear when they will do so.</p>
+        </section>
+
+        <section>
             <h2>The API v1</h2>
+            <script src="https://gist.github.com/slipszenko/f88263f97e306b6f7fac.js"></script>
+            <p>Eventually it will be:</p>
             <script src="https://gist.github.com/slipszenko/a885383ce306e8ccf30d.js"></script>
+        </section>
+
+        <section>
+            <h2>Demo v1</h2>
+            <form action="example.com/somewhere" class="textInput">
+                <input type="text" name="message" x-webkit-speech />
+            </form>
+        </section>
+
+        <section>
+            <h2>GRXML!</h2>
+            <p>Specify your own grammars to improve the </p>
+            <p>Specified as so:</p>
+            <script src="https://gist.github.com/slipszenko/b5ac786a16e29372020b.js"></script>
+            <p>Only downside is you need to know grxml, which isn't in most web developers skill sets.</p>
+            <p>Best resource I've found so far is: <a href="http://msdn.microsoft.com/en-us/library/ee800145.aspx">http://msdn.microsoft.com/en-us/library/ee800145.aspx</a></p>
         </section>
 
         <section>
