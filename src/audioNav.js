@@ -36,10 +36,10 @@ szko.audioNav = (function (external) {
             case 'previous':
                 if(commandParameters == "slide") {
                     if(commandWord == "next") {
-                        external.h5pres.nextSlide();
+                        external.szko.h5pres.nextSlide();
                         success_sound.play();
                     } else {
-                        external.h5pres.prevSlide();
+                        external.szko.h5pres.prevSlide();
                         success_sound.play();
                     }
                 }
@@ -47,10 +47,10 @@ szko.audioNav = (function (external) {
             
             case 'presentation':
                 if(commandParameters == "start" || commandParameters == "starts") {
-                    external.h5pres.startPresenting();
+                    external.szko.h5pres.startPresenting();
                     success_sound.play();
                 } else if(commandParameters == "stop") {
-                    external.h5pres.stopPresenting();
+                    external.szko.h5pres.stopPresenting();
                     success_sound.play();
                 }
                 break;
@@ -77,6 +77,34 @@ szko.audioNav = (function (external) {
 
     lastWord = function(o) {
         return (""+o).replace(/[\s-]+$/,'').split(/[\s-]/).pop();
+    },
+
+
+    setGrammar = function() {
+        if(typeof szko.grxmlGen.generateGrammar !== "undefined") {
+            var grammarLinks = [];
+            var i = 0;
+            for(var index in links) {
+                grammarLinks[i] = index;
+                i += 1;
+            };
+            console.log(grammarLinks);
+            var grammarArray = [
+                "next slide",
+                "previous slide",
+                "presentation", [
+                    "start",
+                    "stop"
+                ],
+                "scroll", [
+                    "up",
+                    "down"
+                ],
+                "navigate", grammarLinks
+            ];
+            console.log(grammarArray);
+            recognition.grammar = szko.grxmlGen.generateGrammar(grammarArray, true);
+        }
     },
 
 
@@ -110,6 +138,9 @@ szko.audioNav = (function (external) {
 
             final_transcript = "";
             recognition.lang = "en-GB";
+
+            setGrammar();
+
             recognition.start();
 
             recognition.onstart = function() { console.log("Speech recognition started."); }
@@ -163,5 +194,5 @@ szko.audioNav = (function (external) {
         processCommand : processCommand.bind(szko.audioNav)
     };
 
-}(szko.h5pres ? { h5pres : szko.h5pres } : {}));
+}(szko ? { szko : szko } : {}));
 window.addEventListener('load', szko.audioNav.init, false);

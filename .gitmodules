@@ -4,3 +4,6 @@
 [submodule "lib/css3-print"]
 	path = lib/css3-print
 	url = git@github.com:slipszenko/css3-print.git
+[submodule "lib/grxmlGen"]
+	path = lib/grxmlGen
+	url = git@github.com:slipszenko/grxmlGen.git
