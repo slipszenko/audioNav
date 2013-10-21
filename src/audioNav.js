@@ -81,14 +81,17 @@ szko.audioNav = (function (external) {
 
 
     setGrammar = function() {
+        // Only proceed if the grammar generator is available
         if(typeof szko.grxmlGen.generateGrammar !== "undefined") {
+            // Build the an array containing all the texts inside the links
             var grammarLinks = [];
             var i = 0;
             for(var index in links) {
                 grammarLinks[i] = index;
                 i += 1;
             };
-            console.log(grammarLinks);
+            
+            // Finish building the array containing the available commands
             var grammarArray = [
                 "next slide",
                 "previous slide",
@@ -102,7 +105,8 @@ szko.audioNav = (function (external) {
                 ],
                 "navigate", grammarLinks
             ];
-            console.log(grammarArray);
+            
+            // Set the grammar file to the generated blob URL
             recognition.grammar = szko.grxmlGen.generateGrammar(grammarArray, true);
         }
     },
