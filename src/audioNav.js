@@ -82,7 +82,7 @@ szko.audioNav = (function (external) {
 
     setGrammar = function() {
         // Only proceed if the grammar generator is available
-        if(typeof szko.grxmlGen.generateGrammar !== "undefined") {
+        if(!!szko.grxmlGen) {
             // Build the an array containing all the texts inside the links
             var grammarLinks = [];
             var i = 0;
